@@ -6,11 +6,10 @@ Projekat iz predmeta Racunarska Inteligencija. Tema projekta je NP tezak problem
 ## Brute Force
 Implementacija brute force algoritma koji resava ovaj problem. U sklopu resenja postoji i klasa makeBigFile koja sluzi za generisanje fajla za testiranje programa. Fajl se nalazi u datoteci resources.
 
-   ### Pokretanje brute force algoritma
-    
-    ```
-     cd BruteForce
-     cd src
-     g++ bruteForce.cpp
-     ./a.out
-     ```
+### Pokretanje brute force algoritma
+```
+cd BruteForce
+cd src
+g++ bruteForce.cpp
+./a.out
+```
