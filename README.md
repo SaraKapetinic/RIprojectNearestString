@@ -13,3 +13,13 @@ cd src
 g++ bruteForce.cpp
 ./a.out
 ```
+## Optimization algorithm
+Optimizacija je uradjena koriscenjem RVNS-a i simuliranog kaljenja. Sto se tice testiranja isto vazi kao i za brute force algoritam.
+
+### Pokretanje optimizacionog algoritma
+```
+cd OptimizationAlgorithm
+cmake .
+make
+./OptimizationAlgorithm
+```
