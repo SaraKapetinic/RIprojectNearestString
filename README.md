@@ -8,7 +8,8 @@ Implementacija brute force algoritma koji resava ovaj problem. U sklopu resenja 
 
    ### Pokretanje brute force algoritma
     
-    ```cd BruteForce
+    ```
+     cd BruteForce
      cd src
      g++ bruteForce.cpp
      ./a.out
