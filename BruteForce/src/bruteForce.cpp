@@ -83,10 +83,10 @@ int findMaximumHammingDistance(std::string chosen,std::vector<std::string> initS
 
 
 int main() {
-    makeBigFile mb;
-    mb.writetofile();
+    //makeBigFile mb;
+    //mb.writetofile();
 
-    std::ifstream input_file("/home/sara/Desktop/RIprojectNearestString/src/test.txt");
+    std::ifstream input_file("/home/sara/Desktop/RIprojectNearestString/BruteForce/resources/test.txt");
     if(!input_file){
         std::cerr<<"Can't open the file!"<<std::endl;
     }
@@ -108,12 +108,8 @@ int main() {
         }
     }
 
-
     generate_words(albet,k,allPermutations);
 
-    for(auto perm:allPermutations){
-        std::cout<<perm<<std::endl;
-    }
     int bestHammingDistance = initStrings[0].size();
     int currentHammingDistance = 0;
     std::string bestPermutation = allPermutations[0];
@@ -126,23 +122,8 @@ int main() {
         }
     }    
 
-    std::cout<<std::endl;
     std::cout<<bestPermutation<<" "<<bestHammingDistance<<std::endl;
     auto done = std::chrono::high_resolution_clock::now();
     std::cout << std::chrono::duration_cast<std::chrono::milliseconds>(done-started).count();
     return 0;
 }
-
-
-/*
-    auto started = std::chrono::high_resolution_clock::now();
-
-    std::cout<<bestWord <<std::endl;
-    for(int i =0;i<initStrings.size();i++){
-        std::cout<<calcHammingDistance(bestWord,initStrings[i])<<std::endl;
-    }
-
-    auto done = std::chrono::high_resolution_clock::now();
-    std::cout << std::chrono::duration_cast<std::chrono::milliseconds>(done-started).count();
-*/
-

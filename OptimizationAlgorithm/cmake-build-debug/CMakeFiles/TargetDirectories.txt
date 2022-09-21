@@ -1,0 +1,3 @@
+/home/sara/Desktop/RIprojectNearestString/OptimizationAlgorithm/cmake-build-debug/CMakeFiles/OptimizationAlgorithm.dir
+/home/sara/Desktop/RIprojectNearestString/OptimizationAlgorithm/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/sara/Desktop/RIprojectNearestString/OptimizationAlgorithm/cmake-build-debug/CMakeFiles/rebuild_cache.dir
