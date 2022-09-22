@@ -23,3 +23,13 @@ cmake .
 make
 ./OptimizationAlgorithm
 ```
+
+## Second Optimization
+Optimizacija je uradjena pamcenjem broja pojavljivanja karaktera na svakoj poziciji.Krajnje resenje je string koji sa sastoji od svih karaktera koji su se pojavili najveci broj puta na poziciji. Testiran je na svim skupovima kao i prethodni algoritmi i dao zadovoljavajuca resenja.
+
+```
+cd Second\ Optimization/
+cd src
+g++ main.cpp
+./a.out
+```
