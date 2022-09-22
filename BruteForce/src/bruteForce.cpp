@@ -83,10 +83,11 @@ int findMaximumHammingDistance(std::string chosen,std::vector<std::string> initS
 
 
 int main() {
+    //if you want to generate new file content uncomment next two lines
     //makeBigFile mb;
     //mb.writetofile();
 
-    std::ifstream input_file("/home/sara/Desktop/RIprojectNearestString/BruteForce/resources/test.txt");
+    std::ifstream input_file("/home/sara/Desktop/RIprojectNearestString/BruteForce/resources/test1.txt");
     if(!input_file){
         std::cerr<<"Can't open the file!"<<std::endl;
     }
@@ -107,8 +108,8 @@ int main() {
             newAlphabet.insert(s[i]);
         }
     }
-
-    generate_words(albet,k,allPermutations);
+    std::vector<char> alphabet(newAlphabet.begin(),newAlphabet.end());
+    generate_words(alphabet,k,allPermutations);
 
     int bestHammingDistance = initStrings[0].size();
     int currentHammingDistance = 0;

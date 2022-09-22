@@ -1,0 +1,50 @@
+//
+// Created by sara on 18.9.22..
+//
+
+#ifndef NEARESTSTRING_MAKEBIGFILE_H
+#define NEARESTSTRING_MAKEBIGFILE_H
+
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <random>
+
+
+class makeBigFile {
+public :
+    const std::vector<std::string> albet = {"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"};
+    void writetofile(){
+        std::string s;
+        std::ofstream output_file("/home/sara/Desktop/RIprojectNearsetString/Second Optimization/resources/test4.txt");
+
+        for(int i =0 ;i< 100;i++){
+            s = generateNextRandomWord(albet,5);
+            output_file << s;
+            output_file << std::endl;
+
+        }
+
+    }
+    std::string generateNextRandomWord(std::vector<std::string> alphabet,int len)
+    {
+        std::string generateString = "";
+        int randomIndex;
+        std::vector<int> indices;
+        std::random_device rd;
+        std::mt19937 gen(rd());
+        std::uniform_int_distribution<> dist(0,25);
+        for(int i =0; i< len;i++) {
+            int index = dist(gen);
+            indices.push_back(index);
+
+        }
+        for(int i:indices){
+            generateString += (albet[i]);
+        }
+        return generateString;
+    }
+};
+
+#endif //NEARESTSTRING_MAKEBIGFILE_H

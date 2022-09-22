@@ -9,14 +9,14 @@
 #include "OptAlgorithm.h"
 
 const std::vector<char> albet ={'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
-int MAX_ITERS = 10000;
+int MAX_ITERS = 5000;
 int main() {
 
     // If you want to generate large file for testing the algorithm, just uncomment 2 lines under
     //makeBigFile big;
     //big.writetofile();
 
-    std::ifstream input_file("/home/sara/Desktop/RIprojectNearestString/OptimizationAlgorithm/resources/test.txt");
+    std::ifstream input_file("/home/sara/Desktop/RIprojectNearestString/OptimizationAlgorithm/resources/test3.txt");
     if(!input_file){
         std::cerr<<"Can't open the file!"<<std::endl;
     }
@@ -29,21 +29,23 @@ int main() {
     }
     //We initialize class with vector of string, length of words and alphabet
     OptAlgorithm optimizationAlgorithm(initStrings,initStrings[0].size(),albet);
+    auto started = std::chrono::high_resolution_clock::now();
 
     //Printing some of the informations about the program
     std::cout<<"Number of words: "<<optimizationAlgorithm.getStrings().size()<<
     std::endl<<"Length of words: " << optimizationAlgorithm.getLength(initStrings)<<
-    std::endl<<"Start solution: " << optimizationAlgorithm.getSolution()<<std::endl
+    std::endl
     <<"Number of iterations: "<<MAX_ITERS<<std::endl
     <<"Alphabet length: "<<optimizationAlgorithm.getAlphabet().size()<<std::endl;
 
     //if you want to use RVNS uncomment a line bellow and comment the second line bellow
-    //std::pair<std::string,int> result = optimizationAlgorithm.RVNS(MAX_ITERS,2);
-    std::pair<std::string,int> result = optimizationAlgorithm.simulatedAnnealing(MAX_ITERS);
+    std::pair<std::string,int> result = optimizationAlgorithm.RVNS(MAX_ITERS,2);
+    //std::pair<std::string,int> result = optimizationAlgorithm.simulatedAnnealing(MAX_ITERS);
 
     std::cout<<std::endl;
     std::cout<<"Result: "<<result.first<<" "<<result.second<<std::endl;
-
+    auto done = std::chrono::high_resolution_clock::now();
+    std::cout << std::chrono::duration_cast<std::chrono::milliseconds>(done-started).count();
     //std::cout<<optimizationAlgorithm.getSolution();
 
     return 0;

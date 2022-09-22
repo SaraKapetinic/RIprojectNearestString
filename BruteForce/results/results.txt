@@ -1,0 +1,21 @@
+
+
+Name of file                        ms          Number of words      Number of letter in a word
+
+test.txt         --->               88      |          4          |              3             |
+test1.txt        --->                9      |         100         |              2             |
+test1.txt        --->               26      |         500         |              2             |
+test1.txt        --->               33      |        1000         |              2             |
+test2.txt        --->              155      |         100         |              3             |
+test2.txt        --->              464      |         500         |              3             |
+test2.txt        --->              832      |        1000         |              3             |
+test3.txt        --->             2663      |         100         |              4             |
+test3.txt        --->            12593      |         500         |              4             |
+test3.txt        --->            23400      |        1000         |              4             |
+test3.txt        --->            78003      |         100         |              5             |
+test4.txt        --->           331574      |         500         |              5             |
+test4.txt        --->           674973      |        1000         |              5             |
+
+Kao sto mozemo primetiti veliki problem kod ovog algoritma je generisanje permutacije. 
+Vec za reci duzine 6 karaktera sam dobijala exception "bad_alloc". Istrazivanjem dosla sam do zakljucka da je 
+da se ovaj exception izbacuje kad ne postoji dovoljno slobodne memorije za alokaciju.

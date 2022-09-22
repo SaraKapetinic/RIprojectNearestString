@@ -1,0 +1,25 @@
+
+
+Name of file                        ms          Number of words      Number of letter in a word
+
+test.txt         --->             5139      |       10000         |             10             |
+test1.txt        --->              594      |         100         |              2             |
+test1.txt        --->              769      |         500         |              2             |
+test1.txt        --->             1059      |        1000         |              2             |
+test2.txt        --->              616      |         100         |              3             |
+test2.txt        --->              787      |         500         |              3             |
+test2.txt        --->             1182      |        1000         |              3             |
+test3.txt        --->              582      |         100         |              4             |
+test3.txt        --->              789      |         500         |              4             |
+test3.txt        --->             1072      |        1000         |              4             |
+test3.txt        --->              670      |         100         |              5             |
+test4.txt        --->              780      |         500         |              5             |
+test4.txt        --->             1135      |        1000         |              5             |
+test3.txt        --->           322815      |        1170         |              4             |  (1000000 iteracija)
+
+U poredjenju sa brute force algoritmom,ovde broj karaktera nije doprineo velikom povecanju vremena izvrsavanja.
+Testovi su sprovodjeni za 10000 iteracija nad random generisanim skupovima reci. S obzirom na random generisane skupove reci
+nad alfabetom od 26 karaktera dosta puta je pronadjena rec cije je minimalno maksimalno Hamingtonovo rastojanje jednako duzini reci.
+Za test skup je dalo dobro resenje za 1000 iteracija, sto se vidi na slici u ovom direktorijumu.
+Povecanjem broja iteracija povecalo se znatno i vreme izvrsavanja. Poslednji test je generisan nad skupom odabranih reci
+i u 100000 iteracija je nadjeno optimalno resenje

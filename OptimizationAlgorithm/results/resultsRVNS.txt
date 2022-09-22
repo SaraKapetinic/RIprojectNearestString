@@ -1,0 +1,26 @@
+
+
+Name of file                        ms          Number of words      Number of letter in a word
+
+test.txt         --->            14880      |       10000         |             10             |
+test1.txt        --->              949      |         100         |              2             |
+test1.txt        --->             1414      |         500         |              2             |
+test1.txt        --->             2113      |        1000         |              2             |
+test2.txt        --->              993      |         100         |              3             |
+test2.txt        --->             1483      |         500         |              3             |
+test2.txt        --->             2105      |        1000         |              3             |
+test3.txt        --->             1185      |         100         |              4             |
+test3.txt        --->             1460      |         500         |              4             |
+test3.txt        --->             2096      |        1000         |              4             |
+test3.txt        --->             1120      |         100         |              5             |
+test4.txt        --->             1471      |         500         |              5             |
+test4.txt        --->             2805      |        1000         |              5             |
+test3.txt        --->           261745      |        1170         |              4             |  (1000000 iteracija)
+test3.txt        --->             1361      |        1170         |              4             |  (5000 iteracija)
+
+Broj iteracija znatno povecava vreme izvrsavanja RVNS algoritma. Medjutim na velikim fajlovima su one neophodne zbog bolje konvergencije
+ka optimalnom resenju. U zavisnosti od broja iteracija sansa ka pronalasku optimalnog resenja se menja.
+U poredjenju sa simuliranim kaljenjem primetila sam da se ovaj algoritam nesto sporije izvrsava nego prethodni, ali u poredjenju
+sa brute force algoritmom to je i dalje znatno bolje. U poslednjem test primeru je za 1000000 iteracija pronadjeno optimalno resenje.
+Nakon daljeg testiranja ispostavilo se da za 5000 iteracija ce dati optimalan izlaz.
+
