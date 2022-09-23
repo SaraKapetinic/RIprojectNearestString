@@ -87,7 +87,7 @@ int main() {
     //makeBigFile mb;
     //mb.writetofile();
 
-    std::ifstream input_file("/home/sara/Desktop/RIprojectNearestString/BruteForce/resources/test1.txt");
+    std::ifstream input_file("/home/sara/Desktop/RIprojectNearestString/BruteForce/resources/test.txt");
     if(!input_file){
         std::cerr<<"Can't open the file!"<<std::endl;
     }

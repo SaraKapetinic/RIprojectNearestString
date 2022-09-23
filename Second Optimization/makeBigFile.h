@@ -17,10 +17,10 @@ public :
     const std::vector<std::string> albet = {"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"};
     void writetofile(){
         std::string s;
-        std::ofstream output_file("/home/sara/Desktop/RIprojectNearsetString/Second Optimization/resources/test4.txt");
+        std::ofstream output_file("/home/sara/Desktop/RIprojectNearsetString/Second Optimization/resources/test.txt");
 
-        for(int i =0 ;i< 100;i++){
-            s = generateNextRandomWord(albet,5);
+        for(int i =0 ;i< 1000;i++){
+            s = generateNextRandomWord(albet,4);
             output_file << s;
             output_file << std::endl;
 

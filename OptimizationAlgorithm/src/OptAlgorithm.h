@@ -47,6 +47,7 @@ public:
     int localSearchInvetedIndex_;
     char localSearchOldChar_;
     int bestWordValue_;
+    int numofIter ;
 
 
 };

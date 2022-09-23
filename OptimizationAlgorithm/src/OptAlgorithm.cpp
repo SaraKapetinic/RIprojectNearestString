@@ -103,18 +103,24 @@ std::pair<std::string,int> OptAlgorithm::RVNS(int iters, int max_k) {
 
     solution_ = initialize(albet_,initStrings_[0].size());
     int currValue = findMaximumHammingDistance(solution_,initStrings_);
+    int bestValue = currValue;
     std::string result = solution_;
-
+    numofIter = 0;
     for(int i=0;i<iters;i++){
         int k = 0;
         while(k <= max_k){
             std::string newSolution = getNeighbour(solution_,k);
+            std::cout<<newSolution<<std::endl;
             int newValue = findMaximumHammingDistance(newSolution,initStrings_);
 
             if(newValue < currValue){
                  solution_ = newSolution;
                  currValue = newValue;
+                 if(newValue < bestValue){
+                 bestValue = newValue;
                  result = newSolution;
+                 numofIter = i;
+                 }
                  break;
             }
             else {
@@ -123,7 +129,7 @@ std::pair<std::string,int> OptAlgorithm::RVNS(int iters, int max_k) {
             }
         }
     }
-    return std::make_pair(result,currValue);
+    return std::make_pair(result,bestValue);
 }
 
 std::string OptAlgorithm::invertSolution(std::string solution){
@@ -150,7 +156,7 @@ std::pair<std::string,int> OptAlgorithm::simulatedAnnealing(int iters){
     int currentValue = findMaximumHammingDistance(solution_,initStrings_);
     std::string result = solution_;
     int bestValue = currentValue;
-
+    numofIter = 0;
     for(int i=0;i<iters;i++){
         std::string newSolution = invertSolution(solution_);
         int newValue = findMaximumHammingDistance(newSolution,initStrings_);
@@ -161,6 +167,7 @@ std::pair<std::string,int> OptAlgorithm::simulatedAnnealing(int iters){
             if(newValue<bestValue){
                 bestValue = newValue;
                 result = newSolution;
+                numofIter = i;
             }
         }
         else{

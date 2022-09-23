@@ -17,15 +17,40 @@
 const std::vector<char> albet ={'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
 
 
-std::string generateNextRandomWord(std::vector<std::string> alphabet,int len);
-std::string findWordsWithMaxDistance(std::vector<std::string> words,int iters);
-int hammingDistance(std::string s1,std::string s2);
+int calcHammingDistance(std::string s1,std::string s2){
+    int hammingDistanceCounter = 0;
+    for(int i=0;i<s1.size();i++){
+        if(s1[i] != s2[i]){
+            hammingDistanceCounter++;
+        }
+    }
+    return hammingDistanceCounter;
+}
+
+int findMaximumHammingDistance(std::string chosen,std::vector<std::string> initStrings){
+
+    int currentHammingDistance = 0;
+    int bestHammingDistance = 0;
+
+    for(std::string s:initStrings){
+        currentHammingDistance = calcHammingDistance(s,chosen);
+
+        if(currentHammingDistance>bestHammingDistance){
+            bestHammingDistance = currentHammingDistance;
+        }
+        if(bestHammingDistance == initStrings[0].size()){
+            return bestHammingDistance;
+        }
+    }
+
+    return bestHammingDistance;
+}
 
 int main() {
     // If you want to generate large file for testing the algorithm, just uncomment 2 lines under
     makeBigFile big;
     big.writetofile();
-    std::ifstream input_file("/home/sara/Desktop/RIprojectNearestString/Second Optimization/resources/test4.txt");
+    std::ifstream input_file("/home/sara/Desktop/RIprojectNearestString/Second Optimization/resources/test.txt");
     if(!input_file){
         std::cerr<<"Can't open the file!"<<std::endl;
     }
@@ -73,7 +98,7 @@ int main() {
         }
         bestWord += rememberedChar;
     }
-    std::cout<<bestWord <<std::endl;
+    std::cout<<bestWord <<findMaximumHammingDistance(bestWord,initStrings)<<std::endl;
 
     auto done = std::chrono::high_resolution_clock::now();
     std::cout << std::chrono::duration_cast<std::chrono::milliseconds>(done-started).count();
@@ -81,13 +106,5 @@ int main() {
     return 0;
 }
 
-int hammingDistance(std::string s1,std::string s2){
-    int hammingDistanceCounter = 0;
-    for(int i=0;i<s1.size();i++){
-        if(s1[i] != s2[i]){
-            hammingDistanceCounter++;
-        }
-    }
-    return hammingDistanceCounter;
-}
+
 

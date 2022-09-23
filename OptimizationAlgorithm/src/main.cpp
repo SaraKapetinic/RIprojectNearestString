@@ -9,14 +9,14 @@
 #include "OptAlgorithm.h"
 
 const std::vector<char> albet ={'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
-int MAX_ITERS = 5000;
+int MAX_ITERS = 10000;
 int main() {
 
     // If you want to generate large file for testing the algorithm, just uncomment 2 lines under
-    //makeBigFile big;
-    //big.writetofile();
+    makeBigFile big;
+    big.writetofile();
 
-    std::ifstream input_file("/home/sara/Desktop/RIprojectNearestString/OptimizationAlgorithm/resources/test3.txt");
+    std::ifstream input_file("/home/sara/Desktop/RIprojectNearestString/OptimizationAlgorithm/resources/test.txt");
     if(!input_file){
         std::cerr<<"Can't open the file!"<<std::endl;
     }
@@ -39,11 +39,11 @@ int main() {
     <<"Alphabet length: "<<optimizationAlgorithm.getAlphabet().size()<<std::endl;
 
     //if you want to use RVNS uncomment a line bellow and comment the second line bellow
-    std::pair<std::string,int> result = optimizationAlgorithm.RVNS(MAX_ITERS,2);
-    //std::pair<std::string,int> result = optimizationAlgorithm.simulatedAnnealing(MAX_ITERS);
+    //std::pair<std::string,int> result = optimizationAlgorithm.RVNS(MAX_ITERS,3);
+    std::pair<std::string,int> result = optimizationAlgorithm.simulatedAnnealing(MAX_ITERS);
 
     std::cout<<std::endl;
-    std::cout<<"Result: "<<result.first<<" "<<result.second<<std::endl;
+    std::cout<<"Result: "<<result.first<<" "<<result.second<<" "<<optimizationAlgorithm.numofIter<<std::endl;
     auto done = std::chrono::high_resolution_clock::now();
     std::cout << std::chrono::duration_cast<std::chrono::milliseconds>(done-started).count();
     //std::cout<<optimizationAlgorithm.getSolution();
